@@ -22,11 +22,14 @@ public class Enemy {
         return name;
     }
 
-    public void attack(Hero hero){
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
-        hero.wounded(damage);
-    }
+    public void attack(Hero hero) {
+        if (dead == false) {
+            int damage = (int) (Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+            hero.wounded(damage);
+        }else {
+        }
+        }
 
     public void wounded(int damage){
         hitPoint -= damage;
